@@ -1,0 +1,124 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                            News Trade EA MT5     |
+//|                                         forexroboteasy.com       |
+//|                                         Developed by Forex Robot |
+//|                                         Easy Team                |
+//+------------------------------------------------------------------+
+
+// Global variables
+datetime newsEventTime;
+int tradeMode = 0; // 0 - Semi-automatic mode, 1 - Fully automatic mode
+
+//+------------------------------------------------------------------+
+//| Customizable Settings                                            |
+//+------------------------------------------------------------------+
+input int tradeSize = 0.1; // Default trade size
+input double riskTolerance = 0.02; // Default risk tolerance
+input ENUM_TIMEFRAMES tradingTimeframe = PERIOD_M15; // Default trading timeframe
+
+//+------------------------------------------------------------------+
+//| Economic Calendar Integration                                    |
+//+------------------------------------------------------------------+
+void integrateEconomicCalendar()
+{
+    // Code to integrate the economic calendar into the software
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//| Retrieve and Analyze Market Data                                 |
+//+------------------------------------------------------------------+
+void retrieveAndAnalyzeMarketData()
+{
+    // Code to retrieve and analyze real-time market data from the economic calendar
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//| Generate Trading Signals                                         |
+//+------------------------------------------------------------------+
+void generateTradingSignals()
+{
+    // Code to generate trading signals based on the analysis of news events
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//| Execute Trades                                                   |
+//+------------------------------------------------------------------+
+void executeTrades()
+{
+    // Code to execute trades based on the generated trading signals
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//| Performance Monitoring                                           |
+//+------------------------------------------------------------------+
+void monitorPerformance()
+{
+    // Code to monitor the performance of the software and provide relevant statistics
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//| Start Trading                                                    |
+//+------------------------------------------------------------------+
+void startTrading()
+{
+    while (true)
+    {
+        if (tradeMode == 0)
+        {
+            // Semi-automatic mode
+            // Code to manually review and confirm trades before execution
+            // ...
+        }
+        else if (tradeMode == 1)
+        {
+            // Fully automatic mode
+            retrieveAndAnalyzeMarketData();
+            generateTradingSignals();
+            executeTrades();
+        }
+
+        // Monitor performance
+        monitorPerformance();
+
+        // Wait for the next news event
+        Sleep(60000); // Wait for 1 minute
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Integrate economic calendar
+    integrateEconomicCalendar();
+
+    // Start trading
+    startTrading();
+
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Code to clean up resources and perform necessary tasks before the EA is removed
+    // ...
+}
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Code to handle incoming ticks
+    // ...
+}
